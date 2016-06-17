@@ -1,0 +1,17 @@
+<div>
+  <%= @comment.errors.full_messages.join(', ') %>
+</div>
+
+<%= form_for @comment do |f| %>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </div>
+  <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %> %>

@@ -1,0 +1,30 @@
+<h1>Title: <%= @post.title.titleize %></h1>
+<p>Post: <%= @post.body %></p>
+<p>Category: <%= @post.category.name %></p>
+
+<div>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+<hr>
+
+<h2>Add a New Comment</h2>
+<%= form_for [@post, @comment] do |f| %>
+  <div>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit "Submit Comment" %>
+<% end %>
+
+<hr>
+
+<h2>All Comments</h2>
+<% @post.new_first_comments.each do |com| %>
+  <div>
+    <h3><%= com.created_at %></h3>
+  </div>
+  <div>
+    <%= com.body %>
+  </div>
+<% end %>

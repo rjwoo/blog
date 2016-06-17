@@ -1,0 +1,21 @@
+
+<h1>New Blog Post</h1>
+
+<div>
+  <%= @post.errors.full_messages.join(', ') %>
+</div>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %>
+  </div>
+  <div><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div><br>
+    <%= f.submit "Create New Post" %>
+<% end %>

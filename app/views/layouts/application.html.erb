@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+  <style>
+    .nav_bar {
+      font-family: Oxygen;
+    }
+  </style>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home", root_path %>
-  |
-  <%= link_to "About", about_path %>
+    <span class="nav_bar"><%= link_to "Home", root_path %>
+    |
+    <%= link_to "About", about_path %>
+    |
+    <%= link_to "Create New Post", new_post_path %>
+    |
+    <%= link_to "Display All Posts", posts_path %></span>
 
+    <span class="username">
+      <% if user_signed_in? %>
+      Welcome <%= current_user.first_name %>
+      <%= link_to "Sign Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %> |
+      <%= link_to "Sign In", new_session_path %>
+    <% end %>
+  </span>
 <hr>
 <%= yield %>
 

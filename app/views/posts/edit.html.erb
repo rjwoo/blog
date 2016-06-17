@@ -1,0 +1,17 @@
+<h1>Edit Blog Post</h1>
+
+<div>
+  <%= @post.errors.full_messages.join(', ') %>
+</div>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  </div>
+  <%= f.submit "Implement Changes" %>
+<% end %>
