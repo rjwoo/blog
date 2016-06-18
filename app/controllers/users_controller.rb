@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def new
     @user = User.new
   end
@@ -27,6 +28,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def update_password
+
   end
 
   private
