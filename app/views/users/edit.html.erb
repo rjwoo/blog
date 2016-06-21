@@ -1,6 +1,6 @@
 <h1>Edit Your Profile</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url:users_path do |f| %>
   <div>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -13,17 +13,8 @@
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
-  <div>
-    <%= f.label :current_password %>
-    <%= password_field_tag :current_password, params[:current_password], placeholder: "Current Password"%>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "New password (optional)" %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm new password" %>
-  </div>
+  <%= link_to "Password Change", edit_password_path(@user) %>
+  <br>
+
   <%= f.submit "Confirm Changes" %>
 <% end %>

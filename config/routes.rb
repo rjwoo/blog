@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/about' => "home#about"
 
-  resource :user, only: [:edit] do
-    collection do
-      patch 'update_password'
-    end
+get "users/:id/edit_password" => "users#edit_password", as: :edit_password
+patch "users/:id/update_password"             => "users#update_password", as: :update_password
+
+  resources :users, only: [:new, :create] do
+    get :edit, on: :collection
+    patch :update, on: :collection
   end
 
-  resources :users, only: [:new, :create, :edit, :update]
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
