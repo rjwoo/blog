@@ -8,8 +8,8 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
   end
 
   def create
-
     @post = Post.new post_params
+    @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
     else
@@ -31,7 +31,7 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
 
   def update
     if @post.update post_params
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: "Post updated!"
     else
       render :edit
     end
@@ -39,7 +39,7 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice: "Post deleted!"
   end
 
   private
@@ -57,13 +57,7 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
   end
 
   def authorize_owner
-    if can? :manage, @question
-      redirect_to root_path, alert: "Access Denied"
-    end
-  end
-
-  def authorize_owner
-    redirect_to root_path, alert: "Access Denied" unless can? :manage, @question
+    redirect_to root_path, alert: "Access Denied" unless can? :manage, @post
   end
 
 end

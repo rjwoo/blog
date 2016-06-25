@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'cancancan', '~> 1.10'
 gem 'interactive_editor'
 gem 'hirb'
 gem 'awesome_print'
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker', github: 'stympy/faker'
 end
 
 group :development do
