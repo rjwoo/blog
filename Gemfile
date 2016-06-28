@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'bootstrap-glyphicons'
 gem 'cancancan', '~> 1.10'
 gem 'interactive_editor'
 gem 'hirb'

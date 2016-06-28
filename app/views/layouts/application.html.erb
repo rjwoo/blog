@@ -23,7 +23,7 @@
 
     <span class="username">
       <% if user_signed_in? %>
-      Welcome <%= link_to current_user.first_name, edit_users_path(current_user) %>
+      Welcome <%= link_to current_user.first_name, edit_users_path(current_user) %>  |
       <%= link_to "Sign Out", sessions_path, method: :delete %>
     <% else %>
       <%= link_to "Sign Up", new_user_path %> |

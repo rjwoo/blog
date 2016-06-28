@@ -19,6 +19,9 @@ patch "users/:id/update_password"             => "users#update_password", as: :u
   end
 
   resources :posts do
+    
+    resources :likes, only: [:create, :destroy]
+
     get :search, on: :collection
     post :flag, on: :member
     post :mark_done

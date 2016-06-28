@@ -11,6 +11,9 @@ class Post < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
 
+  has_many :favourites, dependent: :destroy
+  has_many :users, through: :favourites
+
   def new_first_comments
     comments.order(created_at: :desc)
   end

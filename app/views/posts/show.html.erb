@@ -1,6 +1,7 @@
 <h1>Title: <%= @post.title.titleize %></h1>
 <p>Post: <%= @post.body %></p>
-<p>Category: <%= @post.category.name %></p>
+<p>Category: <%= @post.category.name if @post.category%></p>
+
 
 
 <div>
