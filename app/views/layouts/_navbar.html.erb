@@ -1,0 +1,18 @@
+<span class="nav_bar"><%= link_to "Home", root_path %>
+|
+<%= link_to "About", about_path %>
+|
+<%= link_to "Create New Post", new_post_path %>
+|
+<%= link_to "Display All Posts", posts_path %></span>
+
+<span class="username">
+  <% if user_signed_in? %>
+  Welcome <%= link_to current_user.first_name, edit_users_path(current_user) %>  |
+  <%= link_to "Sign Out", sessions_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign Up", new_user_path %> |
+  <%= link_to "Sign In", new_session_path %>
+<% end %>
+</span>
+<hr>

@@ -2,8 +2,6 @@
 <p>Post: <%= @post.body %></p>
 <p>Category: <%= @post.category.name if @post.category%></p>
 
-
-
 <div>
   <% if can? :manage, @post %>
     <%= link_to "Edit", edit_post_path(@post) %>
@@ -23,10 +21,9 @@
 
 <hr>
 
-<h2>All Comments</h2>
 <% @post.new_first_comments.each do |com| %>
   <div>
-    <h3><%= com.created_at %></h3>
+    <%= com.created_at %>
   </div>
   <div>
     <%= com.body %>

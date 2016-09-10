@@ -55,6 +55,11 @@ h1 {
   float: right;
 }
 
-body > h4 {
+body > div > h4 {
   font-family: Oxygen;
+}
+
+.container {
+  margin-left: 50px;
+  margin-right: 50px;
 }
