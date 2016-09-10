@@ -23,7 +23,7 @@
 
 <% @post.new_first_comments.each do |com| %>
   <div>
-    <%= com.created_at %>
+    <p><%= com.user.first_name %> commented on <%= format_time(com.created_at) %></p>
   </div>
   <div>
     <%= com.body %>
