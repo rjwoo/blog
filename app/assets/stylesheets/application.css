@@ -63,3 +63,13 @@ body > div > h4 {
   margin-left: 50px;
   margin-right: 50px;
 }
+
+/* POST SHOW */
+.comment-box {
+  border: 1px solid #ead7d7;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
