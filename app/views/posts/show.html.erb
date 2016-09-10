@@ -1,4 +1,4 @@
-<h1><%= @post.title.titleize %></h1>
+<h1 class="post-title"><%= @post.title.titleize %></h1>
 <p><%= @post.body %></p>
 <p>Category: <%= @post.category.name if @post.category%></p>
 
@@ -9,17 +9,15 @@
   <% end %>
 </div>
 
-<hr>
-
-<h2>Add a New Comment</h2>
-<%= form_for [@post, @comment] do |f| %>
-  <div>
-    <%= f.text_area :body %>
-  </div>
-  <%= f.submit "Submit Comment" %>
-<% end %>
-
-<hr>
+<div class="new-comment">
+  <h2>Add a New Comment</h2>
+  <%= form_for [@post, @comment] do |f| %>
+    <div>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit "Submit Comment" %>
+  <% end %>
+</div>
 
 <% @post.new_first_comments.each do |com| %>
   <div class="comment-box">
