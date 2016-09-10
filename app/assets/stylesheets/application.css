@@ -1,3 +1,5 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -51,4 +53,8 @@ h1 {
   text-align: right;
   font-family: Oxygen;
   float: right;
+}
+
+body > h4 {
+  font-family: Oxygen;
 }
