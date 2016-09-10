@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 get "users/:id/edit_password" => "users#edit_password", as: :edit_password
 
-patch "users/:id/update_password"             => "users#update_password", as: :update_password
+patch "users/:id/update_password" => "users#update_password", as: :update_password
 
   resources :users, only: [:new, :create] do
     get :edit, on: :collection
@@ -19,7 +19,7 @@ patch "users/:id/update_password"             => "users#update_password", as: :u
   end
 
   resources :posts do
-    
+
     resources :likes, only: [:create, :destroy]
 
     get :search, on: :collection

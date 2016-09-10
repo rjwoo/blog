@@ -6,6 +6,7 @@ gem 'cancancan', '~> 1.10'
 gem 'interactive_editor'
 gem 'hirb'
 gem 'awesome_print'
+gem "rails-erd"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
