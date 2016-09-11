@@ -19,9 +19,12 @@
   <% end %>
 </div>
 
-<% @post.new_first_comments.each do |com| %>
+<% @post.new_first_comments.reverse.each do |com| %>
   <div class="comment-box">
     <p><em><%= com.user.first_name %> commented on <%= format_time(com.created_at) %></em></p>
     <%= com.body %>
+    <div>
+      <%#= link_to "x", post_path(@comment), method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
   </div>
 <% end %>
