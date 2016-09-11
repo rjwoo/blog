@@ -25,13 +25,11 @@ patch "users/:id/update_password" => "users#update_password", as: :update_passwo
     get :search, on: :collection
     post :flag, on: :member
     post :mark_done
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :password_resets
 
-
-  # resources :comments
 
 
   # The priority is based upon order of creation: first created -> highest priority.

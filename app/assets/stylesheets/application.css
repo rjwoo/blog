@@ -79,3 +79,8 @@ body > div > h4 {
   padding-bottom: 15px;
   margin-bottom: 10px;
 }
+
+.comment-delete {
+  float: right;
+  top: 0;
+}

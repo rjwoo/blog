@@ -19,16 +19,16 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.new
-  end
+  # def show
+  #   @post = Post.new
+  # end
 
   def index
     @comments = Comment.order(created_at: :desc)
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def update
     if @comment.update comment_params
@@ -39,6 +39,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find params[:post_id]
     @comment.destroy
     redirect_to posts_path, notice: "Comment deleted!"
   end
