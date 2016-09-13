@@ -7,6 +7,8 @@ gem 'interactive_editor'
 gem 'hirb'
 gem 'awesome_print'
 gem "rails-erd"
+gem "font-awesome-sass"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record

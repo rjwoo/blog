@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -63,8 +64,20 @@ body > div > h4 {
 }
 
 /* POST SHOW */
+.post {
+  border: 1px solid #ead7d7;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+}
+
 .post-title {
   font-family: Oxygen;
+  margin-bottom: 0px;
+  font-size: 28px;
 }
 
 .new-comment {
@@ -82,5 +95,22 @@ body > div > h4 {
 
 .comment-delete {
   float: right;
-  top: 0;
+  margin-top: 10px;
+}
+
+.created-by {
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.post-body {
+  font-size: 16px;
+}
+
+.created-by-comment {
+  font-size: 14px;
+}
+
+.comment-body {
+  font-size: 16px;
 }
