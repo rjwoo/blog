@@ -43,6 +43,12 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
     redirect_to posts_path, notice: "Post deleted!"
   end
 
+  def search
+    @q = "%#{params[:search]}%"
+    @posts = Post.where("title ILIKE ? OR body ILIKE ?", @q, @q)
+    render 'index'
+  end
+
   private
 
   def post_params

@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get '/about' => "home#about"
+  post 'posts/search' => 'posts#search', as: 'search_posts' 
+  get "users/:id/edit_password" => "users#edit_password", as: :edit_password
 
-get "users/:id/edit_password" => "users#edit_password", as: :edit_password
-
-patch "users/:id/update_password" => "users#update_password", as: :update_password
+  patch "users/:id/update_password" => "users#update_password", as: :update_password
 
   resources :users, only: [:new, :create] do
     get :edit, on: :collection

@@ -9,3 +9,8 @@
 
 
 <h4 class="new_post"><%= link_to "Create New Post", new_post_path %></h4>
+
+<%= form_tag search_posts_path do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
