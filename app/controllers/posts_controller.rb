@@ -24,8 +24,13 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    if params[:search]
+      @posts = Post.find(:all, :conditions => ['title ILIKE ?', "%#{params[:search]}%"])
+    else
+      @posts = Post.all
+    end
   end
+
 
   def edit
   end

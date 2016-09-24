@@ -20,8 +20,7 @@ patch "users/:id/update_password" => "users#update_password", as: :update_passwo
 
   resources :posts do
     resources :likes, only: [:create, :destroy]
-
-    get :search, on: :collection
+    
     post :flag, on: :member
     post :mark_done
     resources :comments, only: [:create, :destroy]
@@ -29,7 +28,6 @@ patch "users/:id/update_password" => "users#update_password", as: :update_passwo
 
   resources :password_resets
 
-  resources :searches
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
