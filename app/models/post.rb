@@ -17,5 +17,4 @@ class Post < ActiveRecord::Base
   def new_first_comments
     comments.order(created_at: :desc)
   end
-
 end
