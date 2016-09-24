@@ -1,5 +1,9 @@
 <h1>All Posts</h1>
 
+<%= form_tag search_posts_path do %>
+<%= text_field_tag :search %>
+<%= submit_tag "Search", :name => nil %>
+<% end %>
 
 <% @posts.each do |post| %>
   <h2><%= link_to post.title, post_path(post) %></h2>
@@ -7,10 +11,6 @@
   <hr>
 <% end %>
 
+<%= paginate @posts %>
 
 <h4 class="new_post"><%= link_to "Create New Post", new_post_path %></h4>
-
-<%= form_tag search_posts_path do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>

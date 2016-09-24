@@ -24,7 +24,7 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def edit
@@ -45,7 +45,7 @@ before_action :authorize_owner, only: [:edit, :destroy, :update]
 
   def search
     @q = "%#{params[:search]}%"
-    @posts = Post.where("title ILIKE ? OR body ILIKE ?", @q, @q)
+    @posts = Post.where("title ILIKE ? OR body ILIKE ?", @q, @q).page(params[:page]).per(5)
     render 'index'
   end
 

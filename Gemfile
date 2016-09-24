@@ -8,6 +8,7 @@ gem 'hirb'
 gem 'awesome_print'
 gem "rails-erd"
 gem "font-awesome-sass"
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
