@@ -30,6 +30,7 @@ rails /*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
     margin: 0 auto;
   }
 }*/
+
 .new_post {
   text-align: center;
 }
@@ -54,8 +55,9 @@ body > div > h4 {
 
 .container {
   margin-left: 75px;
-  margin-right: 75px;
+  margin-right: 400px;
 }
+
 
 /* NAVBAR */
 .nav {
