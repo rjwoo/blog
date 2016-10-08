@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/about' => "home#about"
 
+  get '/contact' => "home#contact"
+
   post 'posts/search' => 'posts#search', as: 'search_posts'
   get "users/:id/edit_password" => "users#edit_password", as: :edit_password
 

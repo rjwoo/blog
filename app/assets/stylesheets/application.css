@@ -116,3 +116,17 @@ body > div > h4 {
 .comment-body {
   font-size: 16px;
 }
+
+/* FOOTER */
+.footer  {
+  text-align: center;
+  position: relative;
+  background-color: #08007a;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 100%;
+}
+
+.footer-content {
+  color: white;
+}
